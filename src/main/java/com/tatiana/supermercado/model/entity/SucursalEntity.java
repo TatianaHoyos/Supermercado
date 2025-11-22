@@ -1,23 +1,20 @@
-package com.tatiana.supermercado.model;
+package com.tatiana.supermercado.model.entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
-@Getter
-@Setter
+@Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Producto {
+@Entity
+public class SucursalEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id;
+    private Long id;
     private String nombre;
-    private String categoria;
-    private Double precio;
-    private Integer cantidad;
-
-
+    private String direccion;
 }

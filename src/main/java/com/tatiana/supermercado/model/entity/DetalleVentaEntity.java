@@ -1,5 +1,6 @@
-package com.tatiana.supermercado.model;
+package com.tatiana.supermercado.model.entity;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.ManyToOne;
@@ -10,17 +11,17 @@ import org.springframework.data.annotation.Id;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class DetalleVenta {
+@Entity
+public class DetalleVentaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     //venta
     @ManyToOne
-    private Venta venta;
+    private VentaEntity venta;
     //producto
     @ManyToOne
-    private Producto prod;
+    private ProductoEntity prod;
     private Integer cantProd;
     private Double precio;
 

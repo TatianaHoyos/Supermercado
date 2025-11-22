@@ -1,9 +1,6 @@
-package com.tatiana.supermercado.model;
+package com.tatiana.supermercado.model.entity;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 
@@ -16,8 +13,8 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Venta {
+@Entity
+public class VentaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,8 +23,8 @@ public class Venta {
     private Double total;
 
     @ManyToMany
-    private Sucursal sucursal;
+    private SucursalEntity sucursal;
 
     @OneToMany(mappedBy = "venta")
-    private List<DetalleVenta> detalle = new ArrayList<>();
+    private List<DetalleVentaEntity> detalle = new ArrayList<>();
 }

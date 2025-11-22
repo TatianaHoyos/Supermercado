@@ -1,4 +1,4 @@
-package com.tatiana.supermercado.dto;
+package com.tatiana.supermercado.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,8 +9,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class SucursalDto {
+public class ProductoDto {
     private Long id;
     private String nombre;
-    private String direccion;
+    private String categoria;
+    private Double precio;
+    private int cantidad;
 }

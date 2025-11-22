@@ -1,4 +1,4 @@
-package com.tatiana.supermercado.dto;
+package com.tatiana.supermercado.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
